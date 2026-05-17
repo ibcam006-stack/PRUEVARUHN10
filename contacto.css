@@ -17,11 +17,11 @@ body {
   color: #1d1d1f;
   line-height: 1.6;
 }
-
 /* =========================
    HEADER PRINCIPAL (RUH)
 ========================= */
 .header{
+
     width: 100%;
     background: rgba(245,245,243,0.96);
 
@@ -36,16 +36,7 @@ body {
 
     padding-top: 25px;
 
-    transition: all 0.3s ease;
-}
-
-/* 🔥 OCULTAR LOGO + MENU AL HACER SCROLL */
-.header.hide-content .logo,
-.header.hide-content .navbar,
-.header.hide-content .line {
-    opacity: 0;
-    transform: translateY(-10px);
-    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 /* =========================
