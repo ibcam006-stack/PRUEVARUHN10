@@ -17,12 +17,12 @@ body {
   color: #1d1d1f;
   line-height: 1.6;
 
-  /* espacio para header fijo */
+  /* IMPORTANTE: se ajusta en responsive */
   padding-top: 120px;
 }
 
 /* =========================
-   HEADER (APPLE / INSTAGRAM STYLE)
+   HEADER (APPLE STYLE FIX)
 ========================= */
 .header {
   position: fixed;
@@ -40,11 +40,13 @@ body {
   padding-top: 25px;
 
   transform: translateY(0);
+  opacity: 1;
+
   transition: transform 0.35s ease, opacity 0.35s ease;
   will-change: transform, opacity;
 }
 
-/* estado oculto (JS) */
+/* oculto por JS */
 .header.hidden {
   transform: translateY(-100%);
   opacity: 0;
@@ -57,11 +59,9 @@ body {
 .top-header {
   width: 90%;
   margin: auto;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: relative;
 }
 
@@ -94,11 +94,9 @@ body {
 
 .navbar ul {
   list-style: none;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   gap: 40px;
   flex-wrap: wrap;
 }
@@ -125,7 +123,7 @@ body {
 }
 
 /* =========================
-   BLOQUES
+   BLOCKS
 ========================= */
 .block {
   margin-bottom: 65px;
@@ -227,13 +225,17 @@ body {
 }
 
 /* =========================
-   FOOTER
+   SCROLL REVEAL
 ========================= */
-.footer {
-  background: #05010d;
-  color: white;
-  padding: 90px 10% 50px;
-  margin-top: 80px;
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =========================
@@ -242,7 +244,7 @@ body {
 @media (max-width: 768px) {
 
   body {
-    padding-top: 140px; /* más espacio para header más alto */
+    padding-top: 140px;
   }
 
   .logo h1 {
@@ -250,7 +252,7 @@ body {
   }
 
   .navbar ul {
-    gap: 20px;
+    gap: 18px;
   }
 
   .grid {
@@ -287,4 +289,141 @@ body {
   .grid {
     grid-template-columns: 1fr;
   }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .item p {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    padding: 60px 8%;
+
+    border-top: 1px solid rgba(0,0,0,0.08);
+
+    text-align: center;
+}
+
+.footer p{
+    color: #777;
+    font-size: 0.95rem;
+}
+
+/* =========================
+   SCROLL EFFECT
+========================= */
+
+.reveal{
+    opacity: 0;
+    transform: translateY(70px);
+
+    transition: all 1s ease;
+}
+
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 1200px){
+
+    .hero h1{
+        font-size: 3.2rem;
+    }
+
+    .sponsor-card{
+        gap: 50px;
+    }
+
+}
+
+@media(max-width: 992px){
+
+    .sponsor-card{
+        grid-template-columns: 1fr;
+    }
+
+    .sponsor-image{
+        height: 500px;
+    }
+
+    .hero h1{
+        font-size: 2.8rem;
+    }
+
+    .details{
+        flex-direction: column;
+    }
+
+}
+
+@media(max-width: 768px){
+
+    .topbar{
+        padding: 18px 6%;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .hero{
+        padding: 150px 7% 80px;
+    }
+
+    .hero h1{
+        font-size: 2.2rem;
+    }
+
+    .hero p{
+        font-size: 1rem;
+    }
+
+    .sponsors{
+        padding: 0 7% 100px;
+        gap: 90px;
+    }
+
+    .sponsor-image{
+        height: 400px;
+    }
+
+    .sponsor-info h2{
+        font-size: 2.2rem;
+    }
+
+}
+
+@media(max-width: 500px){
+
+    .hero h1{
+        font-size: 1.8rem;
+    }
+
+    .sponsor-image{
+        height: 320px;
+        border-radius: 25px;
+    }
+
+    .sponsor-info h2{
+        font-size: 1.8rem;
+    }
+
+    .detail-box{
+        padding: 25px;
+    }
+
 }
