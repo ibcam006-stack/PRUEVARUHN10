@@ -21,14 +21,13 @@ body {
    HEADER PRINCIPAL (RUH)
 ========================= */
 .header{
-
-    width: 100%;
-    background: rgba(245,245,243,0.96);
-
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 1000;
 
+    background: rgba(245,245,243,0.96);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
@@ -37,6 +36,9 @@ body {
     padding-top: 25px;
 
     transition: transform 0.4s ease, opacity 0.4s ease;
+
+    transform: translateY(0);
+    opacity: 1;
 }
 
 /* =========================
