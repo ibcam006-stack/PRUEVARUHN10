@@ -1,23 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
+// ===============================
+// HEADER APARECE SOLO ARRIBA
+// ===============================
+let lastScroll = 0;
+const header = document.querySelector(".header");
 
-  // ===============================
-  // HEADER SCROLL EFFECT (mostrar solo en top)
-  // ===============================
-  const header = document.querySelector(".header");
+window.addEventListener("scroll", () => {
 
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset;
+  const currentScroll = window.pageYOffset;
 
-    if (!header) return;
+  if (!header) return;
 
-    // SOLO visible cuando estás arriba del todo
-    if (currentScroll <= 10) {
-      header.classList.remove("hide-content");
-    } else {
-      header.classList.add("hide-content");
-    }
-  });
+  // arriba del todo → siempre visible
+  if (currentScroll <= 10) {
+    header.style.transform = "translateY(0)";
+    header.style.opacity = "1";
+    header.style.pointerEvents = "all";
+    lastScroll = currentScroll;
+    return;
+  }
 
+  // scroll hacia abajo → ocultar
+  if (currentScroll > lastScroll) {
+    header.style.transform = "translateY(-100%)";
+    header.style.opacity = "0";
+    header.style.pointerEvents = "none";
+  }
+
+  // scroll hacia arriba → mostrar
+  else {
+    header.style.transform = "translateY(0)";
+    header.style.opacity = "1";
+    header.style.pointerEvents = "all";
+  }
+
+  lastScroll = currentScroll;
+});
+
+});
 
   // ===============================
   // ANIMACIÓN SCROLL REVEAL
