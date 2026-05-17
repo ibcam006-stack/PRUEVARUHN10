@@ -1,0 +1,930 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f7;
+    color: #111;
+
+    overflow-x: hidden;
+
+    opacity: 0;
+
+    transition: opacity 0.8s ease;
+}
+
+body.loaded{
+    opacity: 1;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header{
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    background: rgba(245,245,247,0.88);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+
+    padding: 18px 0;
+
+    transition:
+    transform 0.4s ease,
+    background 0.3s ease;
+}
+
+/* HIDE HEADER */
+
+.header.hide{
+    transform: translateY(-100%);
+}
+
+.header.active{
+    background: rgba(255,255,255,0.94);
+}
+
+/* =========================
+   SECOND HEADER
+========================= */
+
+.second-header{
+    width: 92%;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-button{
+    text-decoration: none;
+
+    color: #111;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+.back-button:hover{
+    opacity: 0.6;
+}
+
+/* =========================
+   MOBILE BUTTON
+========================= */
+
+.menu-toggle{
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    font-size: 32px;
+
+    cursor: pointer;
+}
+
+/* =========================
+   LINE
+========================= */
+
+.line{
+    width: 92%;
+    height: 1px;
+
+    background: rgba(0,0,0,0.08);
+
+    margin: 18px auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar{
+    width: 100%;
+}
+
+.navbar ul{
+    list-style: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 40px;
+
+    flex-wrap: wrap;
+}
+
+.navbar a{
+    text-decoration: none;
+
+    color: #1d1d1f;
+
+    font-size: 15px;
+    font-weight: 400;
+
+    transition: 0.3s ease;
+}
+
+.navbar a:hover{
+    color: #6e6e73;
+}
+
+/* =========================
+   APPLE SECTION
+========================= */
+
+.apple-convocatorias{
+    padding: 170px 8% 100px;
+    background: #fff;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.section-title{
+    margin-bottom: 60px;
+}
+
+.section-title h2{
+    font-size: 58px;
+    font-weight: 600;
+
+    color: #111;
+
+    margin-bottom: 15px;
+
+    letter-spacing: -2px;
+}
+
+.section-title p{
+    font-size: 20px;
+    color: #666;
+
+    max-width: 700px;
+
+    line-height: 1.7;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.apple-grid{
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 30px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.apple-card{
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 35px;
+
+    min-height: 500px;
+
+    cursor: pointer;
+
+    transition: 0.5s ease;
+}
+
+.apple-card.large{
+    grid-row: span 2;
+
+    min-height: 1030px;
+}
+
+.apple-card img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.6s ease;
+}
+
+.apple-card:hover img{
+    transform: scale(1.05);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.overlay{
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.88),
+        rgba(0,0,0,0.15)
+    );
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.apple-content{
+    position: absolute;
+
+    bottom: 35px;
+    left: 35px;
+    right: 35px;
+
+    color: white;
+
+    z-index: 2;
+}
+
+.apple-content span{
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.8;
+}
+
+.apple-content h3{
+    font-size: 34px;
+
+    line-height: 1.2;
+
+    margin: 15px 0 25px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.open-modal{
+    background: transparent;
+
+    border: none;
+
+    color: white;
+
+    border-bottom: 1px solid white;
+
+    padding-bottom: 5px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    font-family: 'Poppins', sans-serif;
+
+    transition: 0.3s ease;
+}
+
+.open-modal:hover{
+    opacity: 0.7;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.7);
+
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.4s ease;
+
+    z-index: 999;
+
+    overflow-y: auto;
+}
+
+.modal.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =========================
+   MODAL BOX
+========================= */
+
+.modal-box{
+    width: 100%;
+    max-width: 950px;
+
+    background: #111;
+
+    border-radius: 35px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    animation: modalShow 0.4s ease;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+}
+
+/* SCROLL */
+
+.modal-box::-webkit-scrollbar{
+    width: 8px;
+}
+
+.modal-box::-webkit-scrollbar-thumb{
+    background: rgba(255,255,255,0.25);
+    border-radius: 20px;
+}
+
+/* IMAGE */
+
+.modal-box img{
+    width: 100%;
+    height: 450px;
+
+    object-fit: cover;
+}
+
+/* CONTENT */
+
+.modal-content{
+    padding: 50px;
+
+    color: white;
+}
+
+.modal-content span{
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.7;
+}
+
+.modal-content h2{
+    font-size: 42px;
+
+    margin: 20px 0;
+}
+
+.modal-content p{
+    font-size: 17px;
+
+    line-height: 1.9;
+
+    color: #ccc;
+
+    margin-bottom: 25px;
+}
+
+/* CLOSE */
+
+.close-modal{
+    position: sticky;
+
+    top: 20px;
+
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    background: rgba(255,255,255,0.15);
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    z-index: 20;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s ease;
+}
+
+.close-modal:hover{
+    background: rgba(255,255,255,0.3);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes modalShow{
+
+    from{
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width: 1100px){
+
+    .apple-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .apple-card.large{
+        grid-column: span 2;
+
+        min-height: 650px;
+    }
+
+    .section-title h2{
+        font-size: 46px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 768px){
+
+    /* HEADER */
+
+    .header{
+        padding: 15px 0;
+    }
+
+    .second-header{
+        width: 92%;
+    }
+
+    .menu-toggle{
+        display: block;
+    }
+
+    .line{
+        width: 92%;
+    }
+
+    /* NAVBAR */
+
+    .navbar{
+        max-height: 0;
+
+        overflow: hidden;
+
+        transition: 0.4s ease;
+    }
+
+    .navbar.mobile-active{
+        max-height: 500px;
+    }
+
+    .navbar ul{
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 20px 0;
+    }
+
+    .navbar a{
+        font-size: 15px;
+    }
+
+    /* SECTION */
+
+    .apple-convocatorias{
+        padding: 130px 5% 70px;
+    }
+
+    .section-title{
+        margin-bottom: 40px;
+    }
+
+    .section-title h2{
+        font-size: 34px;
+
+        line-height: 1.2;
+
+        letter-spacing: -1px;
+    }
+
+    .section-title p{
+        font-size: 16px;
+    }
+
+    /* GRID */
+
+    .apple-grid{
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .apple-card,
+    .apple-card.large{
+        min-height: 420px;
+
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .apple-content{
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
+    }
+
+    .apple-content h3{
+        font-size: 25px;
+
+        margin: 12px 0 20px;
+    }
+
+    .open-modal{
+        font-size: 14px;
+    }
+
+    /* MODAL */
+
+    .modal{
+        padding: 15px;
+    }
+
+    .modal-box{
+        border-radius: 24px;
+
+        max-height: 95vh;
+    }
+
+    .modal-box img{
+        height: 240px;
+    }
+
+    .modal-content{
+        padding: 30px 22px;
+    }
+
+    .modal-content h2{
+        font-size: 28px;
+
+        line-height: 1.2;
+    }
+
+    .modal-content p{
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+    .close-modal{
+        width: 40px;
+        height: 40px;
+
+        font-size: 24px;
+    }
+
+}
+
+/* =========================
+   EXTRA SMALL
+========================= */
+
+@media(max-width: 480px){
+
+    .back-button{
+        font-size: 14px;
+    }
+
+    .section-title h2{
+        font-size: 28px;
+    }
+
+    .apple-card,
+    .apple-card.large{
+        min-height: 360px;
+    }
+
+    .apple-content h3{
+        font-size: 21px;
+    }
+
+    .modal-content h2{
+        font-size: 24px;
+    }
+
+    .modal-content p{
+        font-size: 14px;
+    }
+
+}
+
+
+
+/* =========================
+   FOOTER GENERAL
+========================= */
+
+.footer{
+    background: #05010d;
+    color: white;
+
+    padding: 90px 10% 50px;
+    margin-top: 80px;
+}
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 120px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   LEFT SIDE
+========================= */
+
+.footer-left{
+    flex: 1;
+    min-width: 320px;
+}
+
+.footer-logo{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+.footer-logo-img{
+    width: 180px;
+}
+
+.footer-logo span{
+    font-size: 0.9rem;
+    color: #d6d6d6;
+    line-height: 1.5;
+}
+
+/* =========================
+   TITULOS FOOTER (CORREGIDO)
+========================= */
+
+.footer-left h2,
+.footer-right h2{
+    font-size: 2.4rem;
+    font-style: normal;
+    font-weight: 600;
+
+    line-height: 1.2;
+    letter-spacing: -1px;
+
+    margin-bottom: 25px;
+
+    color: #ffffff;
+}
+
+/* =========================
+   TEXTOS LEFT
+========================= */
+
+.footer-left p{
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #d0d0d0;
+}
+
+/* =========================
+   RIGHT SIDE
+========================= */
+
+.footer-right{
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-right p{
+    font-size: 1rem;
+    line-height: 1.9;
+    color: #d0d0d0;
+
+    margin-bottom: 35px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.footer-button{
+    padding: 18px 48px;
+
+    background: #b128a6;
+    border: none;
+    border-radius: 4px;
+
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    margin-bottom: 40px;
+}
+
+.footer-button:hover{
+    background: #cf42c3;
+}
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+
+.footer-social{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-social a{
+    color: white;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.footer-social a:hover{
+    color: #cf42c3;
+}
+
+/* =========================
+   DIVIDER LINES
+========================= */
+
+.footer-line{
+    width: 100%;
+    height: 1px;
+
+    background: rgba(255,255,255,0.15);
+
+    margin: 60px 0;
+}
+
+/* =========================
+   PARTNERS SECTION
+========================= */
+
+.footer-partners{
+    text-align: center;
+}
+
+.footer-partners span{
+    display: block;
+
+    margin-bottom: 45px;
+
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+
+    color: #d2d2d2;
+}
+
+.partners-logos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.partners-logos img{
+    width: 110px;
+    object-fit: contain;
+
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+
+    transition: 0.3s;
+}
+
+.partners-logos img:hover{
+    transform: scale(1.05);
+}
+
+/* =========================
+   BOTTOM LINKS
+========================= */
+
+.footer-bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom a{
+    color: white;
+    text-decoration: none;
+
+    opacity: 0.9;
+    transition: 0.3s;
+}
+
+.footer-bottom a:hover{
+    color: #cf42c3;
+}
+
+/* =========================
+   RESPONSIVE TITLES
+========================= */
+
+@media(max-width: 768px){
+    .footer-left h2,
+    .footer-right h2{
+        font-size: 1.8rem;
+    }
+}
+
+@media(max-width: 480px){
+    .footer-left h2,
+    .footer-right h2{
+        font-size: 1.6rem;
+    }
+}

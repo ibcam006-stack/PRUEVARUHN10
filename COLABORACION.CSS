@@ -1,0 +1,358 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #111111;
+    overflow-x: hidden;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 8%;
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+
+    z-index: 999;
+}
+
+.logo{
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav{
+    display: flex;
+    gap: 35px;
+}
+
+.nav a{
+    text-decoration: none;
+    color: #111;
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    transition: 0.3s;
+}
+
+.nav a:hover{
+    opacity: 0.6;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    padding: 180px 10% 100px;
+
+    text-align: center;
+}
+
+.hero span{
+    display: inline-block;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color: #666;
+
+    margin-bottom: 25px;
+}
+
+.hero h1{
+    font-size: 4rem;
+    line-height: 1.1;
+    font-weight: 700;
+
+    margin-bottom: 30px;
+}
+
+.hero p{
+    max-width: 750px;
+    margin: auto;
+
+    font-size: 1.15rem;
+    line-height: 1.8;
+
+    color: #666;
+}
+
+/* =========================
+   SPONSORS
+========================= */
+
+.sponsors{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+
+    padding: 0 8% 120px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.sponsor-card{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.sponsor-image{
+    width: 100%;
+    height: 650px;
+
+    overflow: hidden;
+
+    border-radius: 35px;
+}
+
+.sponsor-image img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.7s;
+}
+
+.sponsor-card:hover img{
+    transform: scale(1.04);
+}
+
+/* =========================
+   INFO
+========================= */
+
+.sponsor-info span{
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    color: #888;
+}
+
+.logo-img{
+    width: 120px;
+    margin-bottom: 30px;
+}
+
+.sponsor-info h2{
+    font-size: 3rem;
+    line-height: 1.1;
+
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.sponsor-info p{
+    font-size: 1rem;
+    line-height: 1.9;
+
+    color: #555;
+
+    margin-bottom: 25px;
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.details{
+    display: flex;
+    gap: 30px;
+
+    margin-top: 40px;
+}
+
+.detail-box{
+    flex: 1;
+
+    background: #f7f7f7;
+
+    padding: 30px;
+
+    border-radius: 25px;
+}
+
+.detail-box h3{
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.detail-box p{
+    font-size: 0.95rem;
+    line-height: 1.8;
+
+    margin-bottom: 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    padding: 60px 8%;
+
+    border-top: 1px solid rgba(0,0,0,0.08);
+
+    text-align: center;
+}
+
+.footer p{
+    color: #777;
+    font-size: 0.95rem;
+}
+
+/* =========================
+   SCROLL EFFECT
+========================= */
+
+.reveal{
+    opacity: 0;
+    transform: translateY(70px);
+
+    transition: all 1s ease;
+}
+
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 1200px){
+
+    .hero h1{
+        font-size: 3.2rem;
+    }
+
+    .sponsor-card{
+        gap: 50px;
+    }
+
+}
+
+@media(max-width: 992px){
+
+    .sponsor-card{
+        grid-template-columns: 1fr;
+    }
+
+    .sponsor-image{
+        height: 500px;
+    }
+
+    .hero h1{
+        font-size: 2.8rem;
+    }
+
+    .details{
+        flex-direction: column;
+    }
+
+}
+
+@media(max-width: 768px){
+
+    .topbar{
+        padding: 18px 6%;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .hero{
+        padding: 150px 7% 80px;
+    }
+
+    .hero h1{
+        font-size: 2.2rem;
+    }
+
+    .hero p{
+        font-size: 1rem;
+    }
+
+    .sponsors{
+        padding: 0 7% 100px;
+        gap: 90px;
+    }
+
+    .sponsor-image{
+        height: 400px;
+    }
+
+    .sponsor-info h2{
+        font-size: 2.2rem;
+    }
+
+}
+
+@media(max-width: 500px){
+
+    .hero h1{
+        font-size: 1.8rem;
+    }
+
+    .sponsor-image{
+        height: 320px;
+        border-radius: 25px;
+    }
+
+    .sponsor-info h2{
+        font-size: 1.8rem;
+    }
+
+    .detail-box{
+        padding: 25px;
+    }
+
+}

@@ -1,0 +1,552 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    background: #fff;
+    color: #1d1d1f;
+    overflow-x: hidden;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+
+    transition: 0.4s ease;
+}
+
+.topbar-container{
+    max-width: 1400px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 5%;
+}
+
+.logo{
+    text-decoration: none;
+    color: #000;
+
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.nav{
+    display: flex;
+    gap: 38px;
+}
+
+.nav a{
+    text-decoration: none;
+    color: #1d1d1f;
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    transition: 0.3s ease;
+}
+
+.nav a:hover{
+    opacity: 0.55;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.hero-background{
+    position: absolute;
+    inset: 0;
+}
+
+.hero-background img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: scale(1.05);
+}
+
+.hero::before{
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.25),
+        rgba(0,0,0,0.55)
+    );
+
+    z-index: 1;
+}
+
+.hero-content{
+    position: relative;
+    z-index: 2;
+
+    max-width: 1200px;
+    width: 100%;
+
+    padding: 0 8%;
+}
+
+.hero-label{
+    color: rgba(255,255,255,0.8);
+
+    font-size: 1rem;
+    font-weight: 500;
+
+    display: inline-block;
+
+    margin-bottom: 30px;
+}
+
+.hero h1{
+    color: white;
+
+    font-size: clamp(3rem, 8vw, 7rem);
+    line-height: 0.95;
+    font-weight: 700;
+    letter-spacing: -4px;
+
+    max-width: 900px;
+}
+
+/* =========================
+   INTRO
+========================= */
+
+.intro-section{
+    padding: 140px 8%;
+}
+
+.intro-container{
+    max-width: 1000px;
+    margin: auto;
+}
+
+.intro-text{
+    font-size: clamp(2rem, 4vw, 4rem);
+    line-height: 1.1;
+    font-weight: 600;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 40px;
+}
+
+.intro-subtext{
+    font-size: 1.25rem;
+    line-height: 1.8;
+
+    color: #6e6e73;
+
+    max-width: 800px;
+}
+
+/* =========================
+   IMAGE FULL
+========================= */
+
+.image-full{
+    width: 100%;
+    padding: 0 5% 120px;
+}
+
+.image-full img{
+    width: 100%;
+    height: 85vh;
+
+    object-fit: cover;
+
+    border-radius: 35px;
+}
+
+/* =========================
+   CONTENT SECTION
+========================= */
+
+.content-section{
+    padding: 140px 8%;
+}
+
+.content-grid{
+    max-width: 1400px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 80px;
+}
+
+.content-left span{
+    font-size: 1rem;
+    font-weight: 600;
+
+    color: #6e6e73;
+}
+
+.content-right h2{
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    line-height: 1.05;
+
+    letter-spacing: -3px;
+    font-weight: 700;
+
+    margin-bottom: 50px;
+
+    max-width: 950px;
+}
+
+.content-right p{
+    font-size: 1.2rem;
+    line-height: 1.9;
+
+    color: #4d4d4f;
+
+    margin-bottom: 35px;
+
+    max-width: 950px;
+}
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote-section{
+    padding: 180px 8%;
+
+    background: #f5f5f7;
+}
+
+.quote-container{
+    max-width: 1200px;
+    margin: auto;
+}
+
+.quote-container h2{
+    font-size: clamp(2.5rem, 6vw, 6rem);
+    line-height: 1.05;
+
+    font-weight: 700;
+    letter-spacing: -3px;
+
+    color: #1d1d1f;
+}
+
+/* =========================
+   LARGE IMAGE
+========================= */
+
+.large-image-section{
+    padding: 120px 5%;
+}
+
+.large-image-container img{
+    width: 100%;
+    height: 90vh;
+
+    object-fit: cover;
+
+    border-radius: 40px;
+}
+
+/* =========================
+   DARK SECTION
+========================= */
+
+.dark-section{
+    background: #000;
+}
+
+.dark-section .content-left span{
+    color: rgba(255,255,255,0.5);
+}
+
+.dark-section h2{
+    color: white;
+}
+
+.dark-section p{
+    color: rgba(255,255,255,0.75);
+}
+
+/* =========================
+   FULLSCREEN IMAGE
+========================= */
+
+.fullscreen-image{
+    width: 100%;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+.fullscreen-image img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+/* =========================
+   CLOSING
+========================= */
+
+.closing-section{
+    padding: 220px 8%;
+    text-align: center;
+}
+
+.closing-container{
+    max-width: 1100px;
+    margin: auto;
+}
+
+.closing-container span{
+    color: #6e6e73;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    display: inline-block;
+
+    margin-bottom: 30px;
+}
+
+.closing-container h2{
+    font-size: clamp(3rem, 6vw, 6rem);
+    line-height: 1;
+
+    letter-spacing: -4px;
+    font-weight: 700;
+
+    margin-bottom: 40px;
+}
+
+.closing-container p{
+    font-size: 1.3rem;
+    line-height: 1.8;
+
+    color: #6e6e73;
+
+    max-width: 800px;
+    margin: auto;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background: #050505;
+    color: white;
+
+    padding: 100px 8% 50px;
+}
+
+.footer-container{
+    max-width: 1400px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 60px;
+
+    padding-bottom: 60px;
+}
+
+.footer-logo h3{
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.footer-logo p{
+    color: rgba(255,255,255,0.6);
+    line-height: 1.7;
+}
+
+.footer-links{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footer-links a{
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover{
+    color: white;
+}
+
+.footer-bottom{
+    border-top: 1px solid rgba(255,255,255,0.08);
+
+    padding-top: 35px;
+
+    text-align: center;
+}
+
+.footer-bottom p{
+    color: rgba(255,255,255,0.45);
+
+    font-size: 0.95rem;
+}
+
+/* =========================
+   SCROLL EFFECT
+========================= */
+
+.topbar.scrolled{
+    background: rgba(255,255,255,0.88);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 1100px){
+
+    .content-grid{
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .hero h1{
+        letter-spacing: -2px;
+    }
+
+}
+
+@media(max-width: 900px){
+
+    .nav{
+        display: none;
+    }
+
+    .hero{
+        height: 95vh;
+    }
+
+    .hero h1{
+        font-size: 3.5rem;
+        line-height: 1;
+    }
+
+    .intro-section,
+    .content-section,
+    .quote-section,
+    .closing-section{
+        padding: 100px 7%;
+    }
+
+    .image-full img,
+    .large-image-container img{
+        height: 60vh;
+    }
+
+    .fullscreen-image{
+        height: 70vh;
+    }
+
+    .content-right h2{
+        margin-bottom: 35px;
+    }
+
+}
+
+@media(max-width: 600px){
+
+    .hero h1{
+        font-size: 2.8rem;
+        letter-spacing: -1px;
+    }
+
+    .intro-text{
+        font-size: 2.3rem;
+    }
+
+    .content-right h2{
+        font-size: 2.3rem;
+        letter-spacing: -1px;
+    }
+
+    .quote-container h2{
+        font-size: 2.5rem;
+        letter-spacing: -1px;
+    }
+
+    .closing-container h2{
+        font-size: 2.7rem;
+        letter-spacing: -2px;
+    }
+
+    .content-right p,
+    .intro-subtext,
+    .closing-container p{
+        font-size: 1.05rem;
+    }
+
+    .image-full img,
+    .large-image-container img{
+        border-radius: 25px;
+    }
+
+    .footer-container{
+        flex-direction: column;
+    }
+
+}
